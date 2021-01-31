@@ -223,6 +223,9 @@
             },
             selectchange: function(event){
                 console.log(event.target);
+                //debugger;
+                //this.$data.img_select = event.target.value;
+                this.$set( this.$data, "img_select", event.target.value );
             },
         },
         components: {
