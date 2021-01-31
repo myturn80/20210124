@@ -179,5 +179,53 @@
             }
         },
     });
+    new Vue({
+        /* edtmc^2w */
+        el: "#elvue",
+        data: {
+            style1 : {},
+        },
+        //template: ``,
+        methods: {
+            overEvent: function(event){
+                console.log(event.target);
+                /*
+                    background-color: purple;
+                    color: yellow;
+                */
+                this.$data.style1 = {
+                    backgroundColor: "purple",
+                    color: "yellow",
+               }
+            },
+            outEvent: function(event) {
+                console.log(event.target);
+                /*
+                    background-color: aqua;
+                    color: black;
+                */
+                this.$data.style1 = {
+                    backgroundColor: "aqua",
+                    color: "black",
+               }
+            },
+        },
+        components: {
+            /* 컴포넌트 등록. 예시) "태그명" : 컴포넌트명 */
+
+        },
+        computed: {
+
+        },
+        watch: {
+
+        },
+        mounted: function() {
+            console.log("mounted");
+        },
+        updated: function() {
+            console.log("updated");
+        },
+    });
 
 </script>
