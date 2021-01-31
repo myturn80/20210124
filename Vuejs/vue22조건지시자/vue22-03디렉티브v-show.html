@@ -59,16 +59,15 @@
 <script>
     new Vue({
         /* edtmc^2w */
-        el: "#app",
+        el: "#app1",
         data: {
-            a : true,
+            a: true,
         },
-        //template: ``,
         methods: {
-            clickBind : function (event) {
+            clickBind: function(event){
                 console.log( event.target );
                 //this.$data.a = !this.$data.a;
-                this.$data.$set(this.$data, "a", !this.$data.a);
+                this.$set(this.$data, "a", !this.$data.a);
             }
         },
     });

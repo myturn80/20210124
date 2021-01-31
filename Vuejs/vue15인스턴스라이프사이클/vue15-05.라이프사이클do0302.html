@@ -38,28 +38,22 @@
         <!-- 버튼 기능 추가-->
         <button v-on:click="doMyName">버튼</button>
     </div>
-
-
 </body>
-
 </html>
-
-
 <!-- vue 플러그인 임포트   -->
 <script src="https://unpkg.com/vue@2.5.16/dist/vue.js">/* vue 플러그인 임포트 */</script>
-
 <script>
     new Vue({
         /* edtmc^2w */
         el: "#app",
         data: {
-            message : "Hello, Vue.js",
+            message: "Hello, Vue.js",
         },
         //template: ``,
         methods: {
-            doMyName : function (event) {
-                //this.$data.message = "test";
-                this.$set( this.$data, "message", "test" )
+            doMyName: function(event){
+                //this.$data.message = "세중";
+                this.$set(this.$data, "message",  "세중");
             }
         },
         components: {
@@ -72,10 +66,11 @@
         watch: {
 
         },
-        mounted : function() {
+        mounted: function() {
             console.log("mounted");
-            //this.$data.message = "change a data at mouted";
-            this.$set( this.$data, "message", "change a data at mouted" );
+            //this.$data.message = "change a data at mounted";
+            debugger;
+            this.$set(this.$data, "message", "change a data at mounted" );
         },
         updated: function() {
             console.log("updated");

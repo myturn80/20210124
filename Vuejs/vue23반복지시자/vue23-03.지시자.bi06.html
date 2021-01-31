@@ -37,7 +37,7 @@
     <hr>
 
     <div id="app" class="col-md-10 offset-md-1">
-        <button v-on:click="btnAddClick">추가</button>
+        <button v-on:click="btnAddClick" >추가</button>
         <table id="list" class="table-bordered">
             <thead>
                 <tr class="bg-warning text-white text-center">
@@ -58,9 +58,6 @@
         </table>
     </div>
 
-
-
-
 </body>
 
 </html>
@@ -72,22 +69,22 @@
         /* edtmc^2w */
         el: "#app",
         data: {
-            contacts : [
-                { name : "설현", tel : "010-3456-8200", address : "서현"},
-                { name : "혜리", tel : "010-3456-8200", address : "혜리"},
+            contacts: [
+                {name: "설현", tel: "010-3456-8200", address: "서현"},
+                {name: "혜리", tel: "010-3456-8299", address: "서리"},
             ],
         },
         //template: ``,
         methods: {
-            btnAddClick : function (event) {
+            btnAddClick: function(event){
                 console.log(event.target);
 
                 var obj = {
-                    name : "하니",
-                    tel : "010-3456-8200",
-                    address : "하니",
+                    name: "하니",
+                    tel: "010-3456-8250",
+                    address: "서현",
                 };
-                //this.$data.contacts[ this.$data.contacts.length] =obj;
+                // this.$data.contacts[ this.$data.contacts.length ] = obj;
                 this.$set( this.$data.contacts, this.$data.contacts.length, obj );
             }
         },
