@@ -53,3 +53,24 @@
 </body>
 
 </html>
+
+<!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js">/* vue 플러그인 임포트 */</script>
+<script>
+    new Vue({
+        /* edtmc^2w */
+        el: "#app",
+        data: {
+            a : true,
+        },
+        //template: ``,
+        methods: {
+            clickBind : function (event) {
+                console.log( event.target );
+                //this.$data.a = !this.$data.a;
+                this.$data.$set(this.$data, "a", !this.$data.a);
+            }
+        },
+    });
+
+</script>
