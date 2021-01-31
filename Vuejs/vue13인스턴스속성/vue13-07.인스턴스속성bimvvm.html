@@ -68,14 +68,14 @@ new Vue({
     },
     mounted: function() {
         console.log("mounted");
-        window.setTimeout( ()=>{
+        window.setTimeout( ( )=>{
             //this.$data.message = "change message after 3 seconds!!!"
-            this.$set( this.$data, "messate", "change message after 3 seconds!!!");
+            this.$set( this.$data, "message", "change message after 3 seconds!!!");
         }, 3000);
 
-        window.setTimeout( ()=>{
+        window.setTimeout( ( )=>{
             //this.$data.message = "change message after 5 seconds!!!"
-            this.$set( this.$data, "messate", "change message after 5 seconds!!!");
+            this.$set( this.$data, "message", "change message after 5 seconds!!!");
         }, 5000);
     },
     updated: function() {
