@@ -74,7 +74,7 @@ new Vue({
         message : "Hello, Vue.js",
         methodscopy : null,
         watchcopy : null,
-        computedcopy : null,
+        //computedcopy : null,
 
     },
     //template: ``,
@@ -89,10 +89,17 @@ new Vue({
 
     },
     computed: {
-
+        computedcopy : function () {
+            return this.$data.message;
+        }
     },
     watch: {
-
+        message : function( value) {
+            //message 값이 바뀌면 watchcopy 값도 바꿔라
+            // this.$data.watchcopy = value;
+            //debugger;
+            this.$set ( this.$data, "watchcopy", value);
+        }
     },
     mounted: function() {
         console.log("mounted");
