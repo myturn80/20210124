@@ -23,6 +23,7 @@
       작업 내용
         1. 페이지가 로딩되면 {{message}} 자리에 "change message at mounted!!!" 를 출력하시오.
         2. 버튼을 클릭하면 {{message}} 자리에 "change message when a button clicked!!!" 를 출력하시오.
+
         3. 페이지가 로딩 3초 후에 {{message}} 자리에 "change message after 3 seconds!!!" 를 출력하시오.
         4. 페이지가 로딩 5초 후에 {{message}} 자리에 "change message after 5 seconds!!!" 를 출력하시오.
 
@@ -38,49 +39,50 @@
 
 <!-- vue 플러그인 임포트   -->
 <script src="https://unpkg.com/vue@2.5.16/dist/vue.js">/* vue 플러그인 임포트 */</script>
-
 <script>
-new Vue({
-    /* edtmc^2w */
-    el: "#my",
-    data: {
-        message : "change message at mounted!!!",
-    },
-    //template: ``,
-    methods: {
-        /*
-            var doClick = function(envent){};
-        */
-        doClick : function (event) {
-            //this.$data.message ="change message when a button clicked!!!";
-            this.$set( this.$data, "message", "change message when a button clicked!!!")
+    // 인스턴스만들기 ==> vuei
+    new Vue({
+        /* edtmc^2w */
+        el: "#my",
+        data: {
+            /* message = "change message at mounted!!!" ; */
+            message : "change message at mounted!!!" ,
         },
-    },
-    components: {
-        /* 컴포넌트 등록. 예시) "태그명" : 컴포넌트명 */
+        //template: ``,
+        methods: {
+            /* var doClick = function(event){ }; */
+            doClick : function(event){
+                //this.$data.message = "change message when a button clicked!!!" ;
+                this.$set( this.$data, "message", "change message when a button clicked!!!" )
+            },
+        },
+        components: {
+            /* 컴포넌트 등록. 예시) "태그명" : 컴포넌트명 */
 
-    },
-    computed: {
+        },
+        computed: {
 
-    },
-    watch: {
+        },
+        watch: {
 
-    },
-    mounted: function() {
-        console.log("mounted");
-        window.setTimeout( ( )=>{
-            //this.$data.message = "change message after 3 seconds!!!"
-            this.$set( this.$data, "message", "change message after 3 seconds!!!");
-        }, 3000);
+        },
+        mounted: function() {
 
-        window.setTimeout( ( )=>{
-            //this.$data.message = "change message after 5 seconds!!!"
-            this.$set( this.$data, "message", "change message after 5 seconds!!!");
-        }, 5000);
-    },
-    updated: function() {
-        console.log("updated");
-    },
-});
+            console.log("mounted");
+
+            window.setTimeout( ()=> {
+                //this.$data.message = "change message after 3 seconds!!!";
+                this.$set( this.$data, "message", "change message after 3 seconds!!!");
+            }, 3000 );
+
+            window.setTimeout( ()=>{
+                //this.$data.message = "change message after 5 seconds!!!";
+                this.$set( this.$data, "message", "change message after 5 seconds!!!");
+            }, 5000 );
+        },
+        updated: function() {
+            console.log("updated");
+        },
+    });
 
 </script>

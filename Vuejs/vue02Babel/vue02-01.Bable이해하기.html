@@ -40,25 +40,30 @@
 </html>
 
 <!-- ES5 사용하기 -->
-<script type="text/Javascritp">
+<script type="text/javascript">
     var name = "abc";
-    var age = 10,
-    var getMessange = function () {
-        return ES5,
+    var age = 10;
+
+    var getMessage = function(){
+        return "Hello, ES5";
     }
-    document.getElementById("output_es5").innerText = getMessange();
+
+    // 태그 찾고 설정
+    var output_es5 = document.getElementById("output_es5");
+    output_es5.innerText = getMessage();
 </script>
 
-
 <!-- ES6 사용하기 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
-<script>
-    const name = "abc";
-    let age = 10;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"> /* JSX를 자바스크립트로 변환 */</script>
+<script type="text/babel">
+    const name = "abc"; // 읽기전용
+    let age = 10; // 읽기쓰기
 
-    const getMessage = () => {
-        return "Hello, ES6 world!!!"
+    const getMessage = ()=>{
+        return "Hello, ES6";
     }
-
-    document.getElementById("output_es5").innerText = getMessange();
+    
+    // 태그 찾고 설정
+    const output_es6 = document.getElementById("output_es6");
+    output_es6.innerText = getMessage();
 </script>
