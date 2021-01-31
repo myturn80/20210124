@@ -129,7 +129,7 @@ new Vue({
         arr : [1 ,2 ,3 ,4 ,5]
     },
     //template: ``,
-    methods: {
+    methods: {  //이벤트 핸들러
         change1 : function() {
             console.log(event.target);
             this.$data.arr[0] = 100;
@@ -151,6 +151,14 @@ new Vue({
         },
         change4 : function() {
             console.log(event.target);
+
+            console.log(this.$data.arr);    //[3, 4, 5]
+            // spread 연산자
+            // var arr = [500, 3, 4, 5, 70]
+            //...this.$data.arr = 3, 4, 5
+            var arr_copy = [500, ...this.$data.arr, 70 ]
+            //this.$data.arr = arr;
+            this.$set( this.$data, "arr", arr_copy)
         }
     },
     components: {

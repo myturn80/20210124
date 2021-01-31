@@ -17,7 +17,7 @@
     <pre>
 
       Vue 인스턴스 속성은 e dt mc^2 life cycle 를 실습한다.
-      
+
       data 프로퍼티에 message를 추가하고 this.$set()을 사용하여 message를 바꾸는 것을 연습한다.
 
       작업 내용
@@ -37,3 +37,50 @@
 </html>
 
 <!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js">/* vue 플러그인 임포트 */</script>
+
+<script>
+new Vue({
+    /* edtmc^2w */
+    el: "#my",
+    data: {
+        message : "change message at mounted!!!",
+    },
+    //template: ``,
+    methods: {
+        /*
+            var doClick = function(envent){};
+        */
+        doClick : function (event) {
+            //this.$data.message ="change message when a button clicked!!!";
+            this.$set( this.$data, "message", "change message when a button clicked!!!")
+        },
+    },
+    components: {
+        /* 컴포넌트 등록. 예시) "태그명" : 컴포넌트명 */
+
+    },
+    computed: {
+
+    },
+    watch: {
+
+    },
+    mounted: function() {
+        console.log("mounted");
+        window.setTimeout( ()=>{
+            //this.$data.message = "change message after 3 seconds!!!"
+            this.$set( this.$data, "messate", "change message after 3 seconds!!!");
+        }, 3000);
+
+        window.setTimeout( ()=>{
+            //this.$data.message = "change message after 5 seconds!!!"
+            this.$set( this.$data, "messate", "change message after 5 seconds!!!");
+        }, 5000);
+    },
+    updated: function() {
+        console.log("updated");
+    },
+});
+
+</script>
